@@ -12,7 +12,7 @@ const [name, setName] = useState('')
 const [room, setRoom] = useState('')
 const [users, setUsers] = useState('')
 const [message, setMessage] = useState('')
-const [messages, setMessages] = useState('')
+const [messages, setMessages] = useState([])
 
 const sendMessage = (event: any) => {
     event.preventDefault()
@@ -23,7 +23,11 @@ const sendMessage = (event: any) => {
 }
 
 return(
-    <Input  />
+    <div>
+    <InfoBar room={room}/>
+    <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+    <Messages name={name} message={message}/>
+    </div>
 )
 }
 
